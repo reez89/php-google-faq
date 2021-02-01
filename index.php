@@ -46,18 +46,87 @@ $db = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src=https://kit.fontawesome.com/fc3e9057b4.js crossorigin=anonymous></script>
+    <link rel="stylesheet" href="./style.css">
     <title>Document</title>
 </head>
 
 <body>
-    <?php foreach ($db as $key => $value) { ?>
-        <h2> <?php echo $value['domanda']; ?> </h2>
-        <p><?php
-            foreach ($value['risposta'] as $key => $values) { ?>
-        <p><?php echo $value['risposta'][$key] ?></p>
+
+    <div id="nav">
+        <div class="navtop">
+            <div class="navtop-left">
+                <img src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg" alt="">
+                <span class="text">Pivacy e termini</span>
+            </div>
+            <div class="navtopright">
+                <i class="fas fa-square"></i>
+                <button>Accedi</button>
+            </div>
+        </div>
+        <div class="navbottom">
+            <ul>
+                <li>
+                    <a href="#" class="linkbars">Introduzione</a>
+                </li>
+                <li>
+                    <a href="#" class="linkbars">Norme sulla privacy</a>
+                </li>
+                <li>
+                    <a href="#" class="linkbars">Termini di servizio</a>
+                </li>
+                <li>
+                    <a href="#" class="linkbars">Tecnologie</a>
+                </li>
+                <li>
+                    <a href="#" class="linkbars">Domande frequenti</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="main">
+        <?php foreach ($db as $key => $value) { ?>
+            <h2> <?php echo $value['domanda']; ?> </h2>
+            <p>
+                <?php foreach ($value['risposta'] as $key => $values) { ?>
+            <p><?php echo $value['risposta'][$key] ?></p>
+        <?php } ?>
+        </p>
     <?php } ?>
-    </p>
-<?php } ?>
+    </div>
+
+    <footer id="footer">
+        <div class="footer_info">
+            <div class="footer_info_left">
+                <ul>
+                    <li>
+                        <a href="">Google</a>
+                    </li>
+                    <li>
+                        <a href="">Tutto su Google</a>
+                    </li>
+                    <li>
+                        <a href="">Privacy</a>
+                    </li>
+                    <li>
+                        <a href="">Termini</a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="footer_info_right">
+                <i class="fas fa-globe-europe"></i>
+                <select value="Seleziona lingua">
+                    <option value="">Italiano</option>
+                    <option value="">English</option>
+                    <option value="">Deutch</option>
+                    <option value="">Francois</option>
+                    <option value="">Polish</option>
+                </select>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
